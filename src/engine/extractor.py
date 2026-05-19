@@ -22,9 +22,28 @@ from engine.prompts.extraction import (
     SYSTEM_PROMPT,
     get_dimension_instruction,
     get_dimension_prompt,
+    wrap_policy_text,
 )
 
 logger = logging.getLogger(__name__)
+
+# Hard ceiling on policy text length. A genuine privacy policy — even an
+# aggregated multi-page one — is far shorter; anything larger is almost
+# certainly a runaway fetch or hostile input. Truncating (rather than
+# rejecting) keeps a score available while bounding LLM cost and memory.
+MAX_POLICY_TEXT_CHARS = 500_000
+
+
+def _cap_policy_text(policy_text: str) -> str:
+    """Truncate over-long policy text, logging a warning when it does."""
+    if len(policy_text) <= MAX_POLICY_TEXT_CHARS:
+        return policy_text
+    logger.warning(
+        "Policy text is %d chars; truncating to %d for extraction.",
+        len(policy_text),
+        MAX_POLICY_TEXT_CHARS,
+    )
+    return policy_text[:MAX_POLICY_TEXT_CHARS]
 
 
 def extract_claims(
@@ -42,6 +61,7 @@ def extract_claims(
     Returns:
         ExtractionResult with all valid claims aggregated across dimensions.
     """
+    policy_text = _cap_policy_text(policy_text)
     supports_cached = _supports_cached_call(llm_client)
     all_claims: list[Claim] = []
 
@@ -83,7 +103,10 @@ def extract_claims_for_dimension(
         Public API — single-dimension extraction. Re-checks support on each call.
     """
     return _extract_for_dimension(
-        policy_text, dimension, llm_client, _supports_cached_call(llm_client)
+        _cap_policy_text(policy_text),
+        dimension,
+        llm_client,
+        _supports_cached_call(llm_client),
     )
 
 
@@ -98,7 +121,7 @@ def _extract_for_dimension(
         raw_response = llm_client(
             user_suffix,
             system=SYSTEM_PROMPT,
-            cached_prefix=f"Policy text:\n{policy_text}",
+            cached_prefix=wrap_policy_text(policy_text),
         )
     else:
         prompt = _build_legacy_prompt(dimension, policy_text)

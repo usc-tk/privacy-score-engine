@@ -6,9 +6,17 @@ from pathlib import Path
 
 import pytest
 
-from engine.extractor import extract_claims, extract_claims_for_dimension
+from engine.extractor import (
+    MAX_POLICY_TEXT_CHARS,
+    extract_claims,
+    extract_claims_for_dimension,
+)
 from engine.models import Claim, ExtractionResult, DIMENSIONS
-from engine.prompts.extraction import SYSTEM_PROMPT
+from engine.prompts.extraction import (
+    POLICY_TEXT_CLOSE,
+    POLICY_TEXT_OPEN,
+    SYSTEM_PROMPT,
+)
 
 FIXTURES_DIR = Path(__file__).parent / "fixtures" / "sample_policies"
 
@@ -335,3 +343,69 @@ class TestOpenSourceBoundary:
                 assert term not in content, (
                     f"Found '{term}' in {py_file}"
                 )
+
+
+class TestInjectionAndSizeGuardrails:
+    """Guardrails: untrusted-input delimiters and the policy-size cap."""
+
+    def test_oversized_policy_text_is_truncated(self, caplog):
+        oversized = "x" * (MAX_POLICY_TEXT_CHARS + 5000)
+        mock_llm = _make_mock_llm([])
+
+        with caplog.at_level("WARNING"):
+            result = extract_claims(oversized, mock_llm)
+
+        assert isinstance(result, ExtractionResult)
+        # The hash reflects the truncated text that was actually analysed.
+        truncated = oversized[:MAX_POLICY_TEXT_CHARS]
+        expected_hash = hashlib.sha256(truncated.encode("utf-8")).hexdigest()
+        assert result.policy_text_hash == expected_hash
+        assert any(
+            "truncat" in r.getMessage().lower() for r in caplog.records
+        )
+
+    def test_normal_policy_text_is_not_truncated(self):
+        mock_llm = _make_mock_llm([])
+        policy = "A perfectly normal short privacy policy."
+
+        result = extract_claims(policy, mock_llm)
+
+        expected_hash = hashlib.sha256(policy.encode("utf-8")).hexdigest()
+        assert result.policy_text_hash == expected_hash
+
+    def test_cached_prefix_wraps_policy_in_untrusted_delimiters(self):
+        captured = []
+
+        def client(prompt, *, system=None, cached_prefix=None, max_tokens=None):
+            captured.append(cached_prefix)
+            return "[]"
+
+        extract_claims_for_dimension("SCANNED POLICY BODY", "data_security", client)
+
+        assert len(captured) == 1
+        prefix = captured[0]
+        assert POLICY_TEXT_OPEN in prefix
+        assert POLICY_TEXT_CLOSE in prefix
+        assert "SCANNED POLICY BODY" in prefix
+
+    def test_legacy_prompt_wraps_policy_in_untrusted_delimiters(self):
+        captured = []
+
+        def legacy_client(prompt):
+            captured.append(prompt)
+            return "[]"
+
+        extract_claims_for_dimension(
+            "SCANNED POLICY BODY", "data_security", legacy_client
+        )
+
+        assert len(captured) == 1
+        assert POLICY_TEXT_OPEN in captured[0]
+        assert POLICY_TEXT_CLOSE in captured[0]
+        assert "SCANNED POLICY BODY" in captured[0]
+
+    def test_system_prompt_is_hardened_against_injection(self):
+        lowered = SYSTEM_PROMPT.lower()
+        assert POLICY_TEXT_OPEN in SYSTEM_PROMPT
+        assert "untrusted" in lowered
+        assert "instruction" in lowered

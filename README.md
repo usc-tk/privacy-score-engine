@@ -185,6 +185,24 @@ result = compute_scores(claims, llm_client)
 
 ---
 
+## Security & Limits
+
+The engine analyses privacy policy text scraped from arbitrary third-party
+websites — i.e. untrusted input. Two guardrails apply:
+
+- **Prompt-injection containment** — policy text and extracted claims are passed
+  to the LLM inside explicit `<untrusted_policy_document>` / `<extracted_claims>`
+  delimiters, and the system prompts instruct the model to treat that content as
+  data only, never obeying instructions embedded within it. This bounds — but
+  cannot wholly eliminate — manipulation by a hostile policy. Scores are always
+  clamped to 0–10, so the worst case is an inaccurate score, never out-of-range
+  output or code execution.
+- **Input size cap** — `extract_claims` truncates policy text longer than
+  500,000 characters (logging a warning) to bound LLM cost and memory. A genuine
+  privacy policy is far shorter.
+
+---
+
 ## Extending the Engine
 
 ### Using a Different LLM
