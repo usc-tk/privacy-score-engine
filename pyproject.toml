@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"
 authors = [
-  { name = "Australian Privacy Score" },
+  { name = "theucu.com" },
 ]
 keywords = [
   "privacy",
@@ -33,7 +33,7 @@ classifiers = [
 dependencies = ["pydantic>=2.0"]
 
 [project.urls]
-Homepage = "https://australianprivacyscore.com.au"
+Homepage = "https://privacy.theucu.com"
 Repository = "https://github.com/usc-tk/privacy-score-engine"
 Issues = "https://github.com/usc-tk/privacy-score-engine/issues"
 Changelog = "https://github.com/usc-tk/privacy-score-engine/releases"

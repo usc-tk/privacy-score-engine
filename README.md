@@ -13,7 +13,7 @@ The engine extracts structured claims from privacy policy text and scores them a
 
 ## What is this?
 
-This package is the **open-source scoring core** of the [Australian Privacy Score](https://australianprivacyscore.com.au) platform. It provides:
+This package is the **open-source scoring core** of the [Australian Privacy Score](https://privacy.theucu.com) platform. It provides:
 
 - **Claim extraction** — Analyse raw privacy policy text and extract structured claims per APP dimension
 - **Dimension scoring** — Score each dimension (0–10) via an injected LLM evaluator
