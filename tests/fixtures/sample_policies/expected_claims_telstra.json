@@ -1,0 +1,50 @@
+[
+  {
+    "dimension": "cross_border_flows",
+    "claim_type": "transfers_to",
+    "claim_value": {"destinations": ["Singapore", "United States", "Philippines"], "provider": "AWS", "safeguard": "contractual_obligations"},
+    "confidence": 0.94,
+    "app_reference": "APP 8",
+    "source_text": "some data processing occurs in AWS facilities in Singapore and the United States"
+  },
+  {
+    "dimension": "automated_decision_making",
+    "claim_type": "adm_disclosed",
+    "claim_value": {"purposes": ["fraud_detection", "network_management", "product_recommendations", "credit_risk"], "opt_out": true},
+    "confidence": 0.92,
+    "app_reference": "APP 1.4",
+    "source_text": "We use automated systems to: Detect and prevent fraud on our network in real-time"
+  },
+  {
+    "dimension": "third_party_sharing",
+    "claim_type": "shares_with",
+    "claim_value": {"recipient": "law_enforcement", "basis": "warrant_or_statutory", "legislation": "Telecommunications (Interception and Access) Act 1979"},
+    "confidence": 0.95,
+    "app_reference": "APP 6",
+    "source_text": "Law enforcement agencies when required by warrant or as permitted under the Telecommunications (Interception and Access) Act 1979"
+  },
+  {
+    "dimension": "third_party_sharing",
+    "claim_type": "shares_purpose",
+    "claim_value": {"recipient": "advertising_partners", "purpose": "targeted_marketing", "consent_required": true},
+    "confidence": 0.88,
+    "app_reference": "APP 6",
+    "source_text": "Our advertising partners for targeted marketing (with your consent)"
+  },
+  {
+    "dimension": "childrens_data",
+    "claim_type": "age_verification",
+    "claim_value": {"age_threshold": 16, "parental_consent_required": true, "deletion_period": "30 days"},
+    "confidence": 0.93,
+    "app_reference": "APP 3.5",
+    "source_text": "TelcoConnect does not knowingly collect personal information from children under the age of 16 without parental consent."
+  },
+  {
+    "dimension": "data_security",
+    "claim_type": "security_measure",
+    "claim_value": {"certification": "ISO 27001", "practices": ["TLS", "penetration_testing", "24/7 SOC"]},
+    "confidence": 0.95,
+    "app_reference": "APP 11",
+    "source_text": "Our security practices are certified under ISO 27001."
+  }
+]

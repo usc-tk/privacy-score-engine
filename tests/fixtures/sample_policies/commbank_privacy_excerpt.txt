@@ -1,0 +1,42 @@
+Privacy Policy — National Bank of Australia (Fictional Excerpt)
+
+Last updated: 1 March 2026
+
+1. About this Policy
+This Privacy Policy explains how National Bank of Australia (NBA) collects, uses, discloses, and protects your personal information in accordance with the Australian Privacy Principles (APPs) under the Privacy Act 1988. We review this policy annually to ensure it remains current and compliant with applicable legislation.
+
+2. Information We Collect
+We collect personal information necessary to provide our banking products and services, including:
+- Identity information: name, date of birth, address, government-issued identification
+- Financial information: account details, transaction history, income and employment details
+- Digital interaction data: IP addresses, device identifiers, browser type, and cookies
+We collect sensitive information such as tax file numbers only with your explicit consent and where required by law. Biometric data (fingerprint, facial recognition) is collected for authentication purposes with your opt-in consent.
+
+3. How We Use Your Information
+We use your personal information for the purposes for which it was collected, including:
+- Providing and managing your banking products and services
+- Verifying your identity and conducting credit assessments
+- Complying with legal and regulatory obligations (including AML/CTF)
+- Improving our products through de-identified analytics
+We will not use your information for direct marketing without your consent. You may opt out of marketing communications at any time by contacting us or using the unsubscribe link.
+
+4. Disclosure to Third Parties
+We may disclose your personal information to:
+- Credit reporting bodies (Equifax, Illion, Experian) for credit assessment purposes
+- Our service providers who assist in operating our business (IT, customer support, fraud detection)
+- Government and regulatory bodies when required by law (AUSTRAC, ATO, APRA)
+- Our related entities within the NBA Group for internal administration
+All third-party service providers are contractually bound to comply with the APPs and protect your data.
+
+5. Cross-Border Disclosure
+Some of our service providers operate in the United States, United Kingdom, India, and the Philippines. Before disclosing your information overseas, we take reasonable steps to ensure the overseas recipient handles your information in accordance with the APPs. We use binding contractual arrangements to protect your data when transferred internationally.
+
+6. Data Security
+We protect your personal information using industry-standard measures including encryption of data in transit and at rest (AES-256), multi-factor authentication, and regular security audits conducted by independent assessors. In the event of a data breach likely to result in serious harm, we will notify you and the OAIC as required under the Notifiable Data Breaches scheme.
+
+7. Your Rights
+Under the APPs, you have the right to:
+- Request access to the personal information we hold about you
+- Request correction of inaccurate or outdated information
+- Lodge a complaint with our Privacy Officer or escalate to the OAIC
+To exercise these rights, contact our Privacy Officer at privacy@nba.com.au or call 1800 123 456. We aim to respond to access requests within 30 days.

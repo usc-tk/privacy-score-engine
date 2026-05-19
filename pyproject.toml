@@ -1,0 +1,52 @@
+[project]
+name = "privacy-score-engine"
+version = "0.1.0"
+description = "Open-source privacy policy scoring engine for Australian Privacy Principles"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [
+  { name = "Australian Privacy Score" },
+]
+keywords = [
+  "privacy",
+  "scoring",
+  "australian-privacy-principles",
+  "APP",
+  "privacy-policy",
+  "compliance",
+  "LLM",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Legal Industry",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+  "Topic :: Security",
+  "Typing :: Typed",
+  "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = ["pydantic>=2.0"]
+
+[project.urls]
+Homepage = "https://australianprivacyscore.com.au"
+Repository = "https://github.com/usc-tk/privacy-score-engine"
+Issues = "https://github.com/usc-tk/privacy-score-engine/issues"
+Changelog = "https://github.com/usc-tk/privacy-score-engine/releases"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = ["pytest>=8.0", "ruff>=0.9"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/engine"]

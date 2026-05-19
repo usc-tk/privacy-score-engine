@@ -1,0 +1,8 @@
+{
+  "cross_border_flows": {"score": 8, "rationale": "Specific cloud provider (AWS) with named locations (Singapore, US, Philippines) and contractual safeguards."},
+  "automated_decision_making": {"score": 7, "rationale": "Four ADM purposes disclosed with human review opt-out mechanism available."},
+  "third_party_sharing": {"score": 6, "rationale": "Law enforcement sharing with statutory basis cited. Advertising partner sharing with consent. No data broker sales explicitly stated."},
+  "childrens_data": {"score": 7, "rationale": "Age threshold (16) with parental consent and 30-day deletion commitment."},
+  "data_security": {"score": 9, "rationale": "ISO 27001 certified, TLS encryption, penetration testing, 24/7 SOC, and 72-hour breach notification."},
+  "consumer_rights": {"score": 6, "rationale": "Online portal for access/correction and deletion rights but limited detail on response timeframes."}
+}

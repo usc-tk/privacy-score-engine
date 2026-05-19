@@ -1,0 +1,50 @@
+[
+  {
+    "dimension": "data_collection",
+    "claim_type": "collects",
+    "claim_value": {"data_type": "identity_information", "examples": ["name", "date of birth", "address", "government ID"]},
+    "confidence": 0.95,
+    "app_reference": "APP 3",
+    "source_text": "Identity information: name, date of birth, address, government-issued identification"
+  },
+  {
+    "dimension": "data_collection",
+    "claim_type": "collects_sensitive",
+    "claim_value": {"data_type": "tax_file_number", "consent": "explicit", "basis": "required by law"},
+    "confidence": 0.92,
+    "app_reference": "APP 3.3",
+    "source_text": "We collect sensitive information such as tax file numbers only with your explicit consent and where required by law."
+  },
+  {
+    "dimension": "third_party_sharing",
+    "claim_type": "shares_with",
+    "claim_value": {"recipient": "credit_reporting_bodies", "names": ["Equifax", "Illion", "Experian"], "purpose": "credit_assessment"},
+    "confidence": 0.95,
+    "app_reference": "APP 6",
+    "source_text": "Credit reporting bodies (Equifax, Illion, Experian) for credit assessment purposes"
+  },
+  {
+    "dimension": "cross_border_flows",
+    "claim_type": "transfers_to",
+    "claim_value": {"destinations": ["United States", "United Kingdom", "India", "Philippines"], "safeguard": "binding_contractual_arrangements"},
+    "confidence": 0.93,
+    "app_reference": "APP 8.1",
+    "source_text": "Some of our service providers operate in the United States, United Kingdom, India, and the Philippines."
+  },
+  {
+    "dimension": "consumer_rights",
+    "claim_type": "provides_access",
+    "claim_value": {"mechanism": "contact_privacy_officer", "email": "privacy@nba.com.au", "response_time": "30 days"},
+    "confidence": 0.94,
+    "app_reference": "APP 12",
+    "source_text": "Request access to the personal information we hold about you"
+  },
+  {
+    "dimension": "data_security",
+    "claim_type": "encryption_stated",
+    "claim_value": {"method": "AES-256", "scope": "in transit and at rest"},
+    "confidence": 0.96,
+    "app_reference": "APP 11",
+    "source_text": "encryption of data in transit and at rest (AES-256)"
+  }
+]

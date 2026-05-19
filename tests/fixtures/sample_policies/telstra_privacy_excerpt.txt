@@ -1,0 +1,42 @@
+Privacy Statement — TelcoConnect Australia (Fictional Excerpt)
+
+Effective date: 15 January 2026
+
+About This Statement
+TelcoConnect Australia Pty Ltd (TelcoConnect) is committed to protecting your privacy. This statement describes how we handle personal information in accordance with the Australian Privacy Principles. This statement was last reviewed in January 2026. We will notify you of material changes via email or through our app.
+
+What We Collect
+We collect personal information to provide telecommunications services, including:
+- Account details: name, address, date of birth, email, phone number
+- Service usage: call records, messaging metadata, data usage volumes, network activity
+- Device information: IMEI, device type, operating system, location data from cell towers
+- Payment details: credit card or bank account details for billing
+We collect location data through cell tower connections to provide network services. This data may also be used for network planning and optimisation.
+
+Automated Decision-Making and Profiling
+We use automated systems to:
+- Detect and prevent fraud on our network in real-time
+- Manage network traffic and quality of service
+- Personalise product recommendations based on your usage patterns
+- Assess credit risk for new service applications
+You have the right to request human review of any automated decision that significantly affects you. Contact our Privacy Team to request a review.
+
+Sharing Your Information
+We share personal information with:
+- Network partners and roaming providers to deliver services when you travel
+- Debt collection agencies if your account is overdue
+- Law enforcement agencies when required by warrant or as permitted under the Telecommunications (Interception and Access) Act 1979
+- Our advertising partners for targeted marketing (with your consent)
+We do not sell your personal information to data brokers.
+
+International Data Transfers
+Our cloud infrastructure is hosted on Amazon Web Services with primary servers in Sydney, Australia. However, some data processing occurs in AWS facilities in Singapore and the United States. We also use customer support centres in the Philippines. All overseas service providers are bound by contractual obligations equivalent to the Australian Privacy Principles. We do not transfer data to countries without adequate privacy protections unless binding corporate rules are in place.
+
+Children's Data
+TelcoConnect does not knowingly collect personal information from children under the age of 16 without parental consent. If a parent or guardian becomes aware that their child has provided us with personal information, please contact us. We will delete such information from our systems within 30 days.
+
+Your Rights and Complaints
+You can access and correct your personal information through your online account at my.telcoconnect.com.au. You may also request deletion of your data where we are not required by law to retain it. To lodge a privacy complaint, email privacy@telcoconnect.com.au or write to our Privacy Officer at GPO Box 5678, Melbourne VIC 3001.
+
+Data Security
+We use Transport Layer Security (TLS) for all data transmissions and encrypt stored data. Our security practices are certified under ISO 27001. We conduct regular penetration testing and maintain a Security Operations Centre that monitors for threats 24/7. In the event of an eligible data breach, we will notify affected individuals and the OAIC within 72 hours.

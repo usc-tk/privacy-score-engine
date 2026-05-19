@@ -1,0 +1,8 @@
+{
+  "data_collection": {"score": 8, "rationale": "Comprehensive disclosure of data types including sensitive data handling with explicit consent requirements."},
+  "third_party_sharing": {"score": 7, "rationale": "Named credit reporting bodies with stated purposes. Contractual obligations mentioned for all third parties."},
+  "cross_border_flows": {"score": 7, "rationale": "Specific countries listed with binding contractual arrangements as safeguard mechanism."},
+  "consumer_rights": {"score": 7, "rationale": "Clear access and correction rights with named contact and 30-day response timeframe."},
+  "data_security": {"score": 8, "rationale": "Specific encryption standard (AES-256), multi-factor auth, and breach notification commitment."},
+  "transparency_clarity": {"score": 6, "rationale": "Annual review stated but limited detail on change notification mechanisms."}
+}
